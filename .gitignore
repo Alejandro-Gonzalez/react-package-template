@@ -1,0 +1,15 @@
+*.log
+*.cache
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+.vscode/*
+package-lock.json
+dist/
+.map/
+out
+node_modules
+coverage/
+.nyc_output/
+out/

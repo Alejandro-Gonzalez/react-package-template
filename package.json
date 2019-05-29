@@ -1,0 +1,52 @@
+{
+  "name": "react-package-template",
+  "description": "react package description",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.4.4",
+    "babel-core": "^7.0.0-beta.3",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.2",
+    "expect.js": "^0.3.1",
+    "jsdoc": "^3.5.5",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "rollup": "^1.12.4",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-serve": "^1.0.1",
+    "sinon": "^7.3.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "test": "mocha",
+    "coverage": "nyc npm run test",
+    "coverage-report": "nyc --reporter=html npm test",
+    "jsdoc": "jsdoc -c ./jsdoc.conf.json -r && google-chrome ./out/index.html"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@babel/runtime": "^7.4.5"
+  }
+}

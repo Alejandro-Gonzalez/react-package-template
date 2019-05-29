@@ -1,0 +1,31 @@
+{
+	"plugins": ["plugins/markdown.js", "plugins/summarize"],
+    "markdown": {
+        "idInHeadings": true
+    },
+    "recurseDepth": 50,
+    "source": {
+        "include": [
+            "./README.md"
+        ],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "((^|\\/|\\\\)_|node_modules)"
+    },
+    "docdash": {
+        "sort": false
+    },
+    "sourceType": "module",
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": [
+            "jsdoc",
+            "closure"
+        ]
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+	},
+    "search": true,
+    "collapse": true
+}

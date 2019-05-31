@@ -1,4 +1,4 @@
-# Simple Package Template
+# React Package Template
 
 This repository is  for create a react packages.
 

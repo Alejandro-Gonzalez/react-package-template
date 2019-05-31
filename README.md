@@ -6,6 +6,7 @@ This repository is  for create a react packages.
 - Babel for transpiling
 - Rollup for building
 - Mocha for testing
+- Eslint and Prettier for better code
 - Server integrated for test your components
 
 ### Info

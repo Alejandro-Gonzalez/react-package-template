@@ -1,10 +1,10 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
-import json from 'rollup-plugin-json'
-import pkg from './package.json';
-import serve from 'rollup-plugin-serve'
+import json from 'rollup-plugin-json';
+import serve from 'rollup-plugin-serve';
 import replace from 'rollup-plugin-replace';
+import pkg from './package.json';
 
 export default [
 	// browser-friendly UMD build
@@ -32,7 +32,7 @@ export default [
 					'@babel/plugin-proposal-class-properties'
 				]
 			}),
-			commonjs(),// so Rollup can convert `ms` to an ES module
+			commonjs(), // so Rollup can convert `ms` to an ES module
 			replace({
 				'process.env.NODE_ENV': JSON.stringify('production')
 			}),
@@ -52,10 +52,7 @@ export default [
 	// the `targets` option which can specify `dest` and `format`)
 	{
 		input: 'src/index.js',
-		output: [
-			{ file: pkg.module, format: 'esm' },
-			{ file: pkg.main, format: 'cjs' }
-		],
+		output: [{ file: pkg.module, format: 'esm' }, { file: pkg.main, format: 'cjs' }],
 		plugins: [
 			babel({
 				babelrc: false,

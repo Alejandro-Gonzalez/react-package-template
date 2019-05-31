@@ -1,8 +1,11 @@
+/* eslint-env mocha */
 import React from 'react';
 import Test from '../src';
+
 const expect = require('expect.js');
 
 // example tests
+
 describe('Test utils', () => {
 	it('shallow render', () => {
 		const wrapper = shallow(<Test />);

@@ -8,6 +8,7 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
@@ -31,7 +32,9 @@
   },
   "peerDependencies": {
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "@babel/runtime": "^7.4.5",
+    "axios": "^0.19.0"
   },
   "scripts": {
     "build": "rollup -c",
@@ -39,12 +42,12 @@
     "test": "mocha",
     "coverage": "nyc npm run test",
     "coverage-report": "nyc --reporter=html npm test",
-    "jsdoc": "jsdoc -c ./jsdoc.conf.json -r && google-chrome ./out/index.html"
+    "jsdoc": "jsdoc -c ./jsdoc.conf.json -r && google-chrome ./out/index.html",
+    "postuninstall": "npm-install-peers",
+    "postinstall": "npm-install-peers"
   },
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "@babel/runtime": "^7.4.5"
-  }
+  "dependencies": {}
 }

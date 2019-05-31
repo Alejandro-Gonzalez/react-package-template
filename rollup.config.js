@@ -17,13 +17,20 @@ export default [
 		},
 		plugins: [
 			json(),
-			resolve(), // so Rollup can find `ms`
+			resolve({
+				preferBuiltins: true,
+				browser: true
+			}), // so Rollup can find `ms`
 			babel({
 				babelrc: false,
 				runtimeHelpers: true,
 				exclude: ['node_modules/**'],
 				presets: ['@babel/preset-env', '@babel/preset-react'],
-				plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-transform-runtime']
+				plugins: [
+					'@babel/plugin-proposal-object-rest-spread',
+					'@babel/plugin-transform-runtime',
+					'@babel/plugin-proposal-class-properties'
+				]
 			}),
 			commonjs(),// so Rollup can convert `ms` to an ES module
 			replace({
@@ -55,7 +62,11 @@ export default [
 				runtimeHelpers: true,
 				exclude: ['node_modules/**'],
 				presets: ['@babel/preset-env', '@babel/preset-react'],
-				plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-transform-runtime']
+				plugins: [
+					'@babel/plugin-proposal-object-rest-spread',
+					'@babel/plugin-transform-runtime',
+					'@babel/plugin-proposal-class-properties'
+				]
 			})
 		],
 		external: ['react', 'ReactDOM']
